@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-USERNAME = 'vcrawler4'
-PASSWORD = 'v1z12010'
+USERNAME = 'YOUR USERNAME'
+PASSWORD = 'YOUR PASSWORD'
 MESSAGE = 'testando o Twitter'
 MESSAGE_WITH_MORE_THAN_140_CHARACTERS = 'testando o limite de caracteres na mensagem no
   Twitter, chegou? ainda nao? nao? nao? ainda nao? quando vamos chegar? estamos perto? chegamos!'

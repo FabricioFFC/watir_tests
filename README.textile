@@ -2,21 +2,33 @@ h1. Watir Tests
 
 This repository contains some tests to show how automate your tests using the awesome Watir.
 
+h2. What are we testing?
+
+For now, we are testing Twitter. More precisely, the tweet feature.
+
 h2. Installation
 
-First of all, you need to install Watir.
-
-If you are in Windows:
-
-pre. gem install watir
-
-If you are in Linux/Mac:
-
-pre. gem install firewatir
-
-After install Watir, clone the repository:
+Clone the repository:
 
 pre. git clone git@github.com:FabricioFFC/watir_tests.git
 
+We are using bundler to manage our gems. So, you need to install it:
+
+pre. gem install bundler
+
+After install bundler, run 'bundle install' to install Watir and Rspec:
+
+pre. bundle install
+
+To run the tests:
+
+pre. rspec spec/twitter/home_page_spec.rb
+
 That's all. Enjoy! ;)
+
+h2. Support
+
+If you have some issue with the tests or how run it, search in Google first, and after you can open an issue in project's Github page.
+
+For more information about how the project was built, you can access my blog "QualidadeBR":http://qualidadebr.wordpress.com/tag/watir/ (sorry, only Portuguese posts)
 

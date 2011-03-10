@@ -1,0 +1,34 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    builder (3.0.0)
+    commonwatir (1.8.0)
+      user-choices
+    diff-lcs (1.1.2)
+    firewatir (1.8.0)
+      commonwatir (= 1.8.0)
+    hoe (2.9.1)
+      rake (>= 0.8.7)
+    rake (0.8.7)
+    rspec (2.5.0)
+      rspec-core (~> 2.5.0)
+      rspec-expectations (~> 2.5.0)
+      rspec-mocks (~> 2.5.0)
+    rspec-core (2.5.1)
+    rspec-expectations (2.5.0)
+      diff-lcs (~> 1.1.2)
+    rspec-mocks (2.5.0)
+    s4t-utils (1.0.4)
+      hoe (>= 1.3.0)
+    user-choices (1.1.6.1)
+      builder (>= 2.1.2)
+      s4t-utils (>= 1.0.3)
+      xml-simple (>= 1.0.11)
+    xml-simple (1.0.14)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  firewatir
+  rspec

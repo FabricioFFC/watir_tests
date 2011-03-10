@@ -1,0 +1,14 @@
+h1. Watir Tests
+
+This repository contains some tests to show how automate your tests using the awesome Watir.
+
+h2. Installation
+
+If you are in Windows:
+
+pre. gem install watir
+
+If you are in Linux/Mac:
+
+pre. gem install firewatir
+

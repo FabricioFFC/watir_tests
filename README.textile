@@ -4,6 +4,8 @@ This repository contains some tests to show how automate your tests using the aw
 
 h2. Installation
 
+First of all, you need to install Watir.
+
 If you are in Windows:
 
 pre. gem install watir
@@ -11,4 +13,10 @@ pre. gem install watir
 If you are in Linux/Mac:
 
 pre. gem install firewatir
+
+After install Watir, clone the repository:
+
+pre. git clone git@github.com:FabricioFFC/watir_tests.git
+
+That's all. Enjoy! ;)
 

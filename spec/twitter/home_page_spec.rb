@@ -2,9 +2,9 @@ require 'spec_helper'
 
 USERNAME = 'YOUR USERNAME'
 PASSWORD = 'YOUR PASSWORD'
-MESSAGE = 'testando o Twitter'
-MESSAGE_WITH_MORE_THAN_140_CHARACTERS = 'testando o limite de caracteres na mensagem no
-  Twitter, chegou? ainda nao? nao? nao? ainda nao? quando vamos chegar? estamos perto? chegamos!'
+MESSAGE = 'Watir rocks!'
+MESSAGE_WITH_MORE_THAN_140_CHARACTERS =  "testing characters limit. 140 characters is the
+  characters limit. Are you pass? not yet? not? not? when are we pass? now? We break the limit!"
 TWITTER_REPEATED_MESSAGE = 'Whoops! You already said that...'
 
 describe Twitter::HomePage do
@@ -15,24 +15,24 @@ describe Twitter::HomePage do
     @home_page.login(USERNAME,PASSWORD)
   end
 
-  it "envia uma mensagem quando ela é válida" do
+  it "send a message when it is valid" do
     @home_page.type_message(MESSAGE)
     @home_page.tweet
     @home_page.message_exists?(MESSAGE).should be_true
   end
 
-  it "retorna mensagem de erro, ao tentar enviar uma mensagem repetida" do
+  it "return a error messagem when try to send a repeated message" do
     @home_page.type_message(MESSAGE)
     @home_page.tweet
     @home_page.alert_message_exists?(TWITTER_REPEATED_MESSAGE).should be_true
   end
 
-  it "não deixa enviar uma mensagem com mais de 140 caracteres" do
+  it "don't allow to send a message when it contains more than 140 characters" do
     @home_page.type_message(MESSAGE_WITH_MORE_THAN_140_CHARACTERS)
     @home_page.tweet_button_is_disabled?.should be_true
   end
 
-  it "não deixa enviar uma mensagem em branco" do
+  it "don't allow to send a message when it is blank" do
     @home_page.type_message('')
     @home_page.tweet_button_is_disabled?.should be_true
   end

@@ -1,12 +1,22 @@
 require 'rubygems'
 #require 'watir'
 require 'firewatir'
+require 'lib/watir_helper.rb'
 
 module Twitter
 
   class HomePage
+    include WatirHelper
 
     HOME_PAGE = 'twitter.com'
+
+    link(:tweet_button, :class => 'tweet-button button')
+    link(:tweet_button_disable, :class => 'tweet-button button disabled')
+    text_field(:username, :name => 'session[username_or_email]')
+    text_field(:password, :name => 'session[password]')
+    text_field(:editor, :class => 'twitter-anywhere-tweet-box-editor')
+    button(:sign_in_submit, :class => 'submit button')
+    div(:message, :class => 'tweet-text')
 
     def initialize
       @browser = Watir::Browser.new
@@ -17,22 +27,22 @@ module Twitter
     end
 
     def login(username, password)
-      @browser.text_field(:name, 'session[username_or_email]').value = username
-      @browser.text_field(:name, 'session[password]').value = password
-      @browser.button(:class, 'submit button').click
+      self.username = username
+      self.password = password
+      self.sign_in_submit
     end
 
     def type_message(message)
-      @browser.text_field(:class, 'twitter-anywhere-tweet-box-editor').value = message
-      @browser.text_field(:class, 'twitter-anywhere-tweet-box-editor').fire_event("onMouseDown")
+      self.editor = message
+      self.editor_text_field.fire_event('onMouseDown')
     end
 
     def tweet
-      @browser.link(:class, "tweet-button button").click
+      self.tweet_button
     end
 
     def message_exists?(message)
-      @browser.wait_until {@browser.div(:class, 'tweet-text').text == message}
+      @browser.wait_until {self.message_div.text == message}
     end
 
     def alert_message_exists?(message)
@@ -40,7 +50,7 @@ module Twitter
     end
 
     def tweet_button_is_disabled?
-      @browser.link(:class, "tweet-button button disabled").exists?
+      @browser.link(self.tweet_button_disable_link.exists?)
     end
 
   end

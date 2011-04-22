@@ -17,10 +17,9 @@ module Twitter
     end
 
     def login(username, password)
-      @browser.link(:class, "signin").click
-      @browser.text_field(:id, 'username').value = username
-      @browser.text_field(:id, 'password').value = password
-      @browser.button(:id, 'signin_submit').click
+      @browser.text_field(:name, 'session[username_or_email]').value = username
+      @browser.text_field(:name, 'session[password]').value = password
+      @browser.button(:class, 'submit button').click
     end
 
     def type_message(message)

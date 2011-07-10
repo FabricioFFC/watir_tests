@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-USERNAME = 'vcrawler1'
-PASSWORD = 'v1z12010'
+USERNAME = 'username'
+PASSWORD = 'password'
 MESSAGE = 'Watir rocks!'
 MESSAGE_WITH_MORE_THAN_140_CHARACTERS =  "testing characters limit. 140 characters is the
   characters limit. Are you pass? not yet? not? not? when are we pass? now? We break the limit!"
